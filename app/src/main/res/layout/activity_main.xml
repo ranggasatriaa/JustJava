@@ -47,13 +47,13 @@
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="PRICE" />
+        android:text="ORDER SUMARRY" />
 
     <TextView
-        android:id="@+id/price_text_view"
+        android:id="@+id/sumarry_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"

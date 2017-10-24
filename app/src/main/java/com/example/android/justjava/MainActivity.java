@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,15 +21,21 @@ public class MainActivity extends AppCompatActivity {
 
     /** This method ca  led when the order button is clicked**/
     public void submitOrder(View view){
-        display(numberOfCoffe);
-        displayPrice(numberOfCoffe * 5);
+        String  priceMessage = "Jumlah: " + numberOfCoffe;
+        priceMessage = priceMessage + "\nHarga: Rp " + (numberOfCoffe*5);
+        priceMessage = priceMessage + "\nThank you";
+        displayMessage(priceMessage);
+//        display(numberOfCoffe);
+//        displayPrice(numberOfCoffe * 5);
     }
 
+    /**this method run when  - button press that will increse value of numberOfCoffe by 1**/
     public void increment(View view){
         numberOfCoffe = numberOfCoffe+1;
         display(numberOfCoffe);
     }
 
+    /**this method run when  - button press that will decrese value of numberOfCoffe by 1**/
     public void decrement(View view){
         if(numberOfCoffe>=1) {
             numberOfCoffe = numberOfCoffe - 1;
@@ -44,9 +52,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**This method display the given quantity value on the screen**/
-    private void displayPrice(int number){
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+//    private void displayPrice(int number){
+//        TextView priceTextView = (TextView) findViewById(R.id.sumarry_text_view);
+//        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+//    }
+
+    /** this method display aditional message on display**/
+    private void displayMessage(String message){
+        TextView summaryTextView = (TextView) findViewById(R.id.sumarry_text_view);
+        summaryTextView.setText(message);
     }
 
 }
